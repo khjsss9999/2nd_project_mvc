@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- JQuery 라이브러리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="resources/css/index.css">
+<link rel="stylesheet" href="resources/css/reset.css">
+</head>
+<body>
+	
+	<header>
+		<a>Home</a>
+		<a>행사 검색</a>
+		<a>고객센터</a>
+		<a>회원가입</a>
+		<a>로그인</a>
+		<a>검색</a>
+	</header>
+	<section>
+		
+	</section>
+	
+</body>
+</html>

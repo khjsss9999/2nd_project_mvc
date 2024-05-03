@@ -1,0 +1,83 @@
+package com.ict.khj.ajax;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AjaxController {
+	
+	@RequestMapping(value = "dustdata2.do", produces="application/json; charset=utf-8")
+	@ResponseBody
+	public String dustData2() {
+	    BufferedReader rd = null;
+	    HttpURLConnection conn = null;
+		try {
+		StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty"); /*URL*/
+        urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=MW2gVDhFfj6KBl0Br/PZKp8tnl8L1ZUPte2qEMWmv09R6VL1dSg8qlElVQMlWCIpj4AWoKdndkUblLiCAagNpA=="); /*Service Key*/
+        urlBuilder.append("&" + URLEncoder.encode("returnType","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*xml 또는 json*/
+        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("100", "UTF-8")); /*한 페이지 결과 수*/
+        urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
+        urlBuilder.append("&" + URLEncoder.encode("sidoName","UTF-8") + "=" + URLEncoder.encode("서울", "UTF-8")); /*시도 이름(전국, 서울, 부산, 대구, 인천, 광주, 대전, 울산, 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주, 세종)*/
+        urlBuilder.append("&" + URLEncoder.encode("ver","UTF-8") + "=" + URLEncoder.encode("1.0", "UTF-8")); /*버전별 상세 결과 참고*/
+        URL url = new URL(urlBuilder.toString());
+        conn = (HttpURLConnection) url.openConnection();
+        
+        conn.setRequestMethod("GET");
+        // 생략가능
+        //conn.setRequestProperty("Content-type", "application/json");
+        
+        if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        } else {
+            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+        }
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = rd.readLine()) != null) {
+            sb.append(line);
+        }
+        System.out.println(sb.toString());
+        return sb.toString();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			  try {
+				rd.close();
+				conn.disconnect();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+        return null;
+	}
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

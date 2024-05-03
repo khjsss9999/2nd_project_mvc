@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+header{
+	width: 1000px;
+	height: 80px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+header > a{
+	width: 150px;
+	height: 70px;
+}
+
+section{
+	width: 1000px;
+	height: 800px;
+}
+
+section > a{
+	justify-content: center;
+	display: block;
+	width: 250px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+section > img{
+	width: 120px;
+	height: 150px;
+}

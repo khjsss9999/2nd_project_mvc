@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+header{
+	width: 1000px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header div{
+	width: 150px;
+	height: 70px;
+}
