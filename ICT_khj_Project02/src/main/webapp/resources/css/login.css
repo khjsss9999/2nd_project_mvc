@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#frame{
+	width: 1050px;
+	margin: 0px auto 0px auto;
+	background-color: white;
+}
+
+#header{
+	width: 1000px;
+	height: 80px;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+
+#header > a{
+	width: 150px;
+	height: 70px;
+	font-size: 30px;
+}
+
+#pack{
+	margin: 20px auto 20px auto;
+	width: 550px;
+	height: 250px;
+	
+}
+
+.ip{
+	width: 500px;
+	height: 60px;
+	background-color: #f5f5f5;
+}
+
+input[type="text"], [type="password"]{
+	width: 200px;
+	height: 30px;
+}
