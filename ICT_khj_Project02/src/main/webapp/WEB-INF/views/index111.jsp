@@ -15,12 +15,27 @@
 	function event_ajax() {
 		location.href = "event_ajax.do";
 	}
+	$(document).ready(function() {
+		function event_db_write() {
+			$.ajax({
+				url : "event_db_write.do",
+				type : "post",
+				dataType : "xml",
+				success : function(data) {
+					alert("업데이트 성공");
+				},
+				error : function() {
+					alert("실패");
+				}
+			});
+		}  
+	});
 </script>
 </head>
 <body>
 	<div id="frame">
 	<div id="header">
-		<a>Home</a> <a onclick="event_ajax()">모든 행사</a> <a>행사 검색</a> <a>고객센터</a> <a>회원가입/로그인</a> 
+		<a>Home</a> <a onclick="event_ajax()">모든 행사</a> <a onclick="event_db_write()">행사 갱신(db저장)</a> <a>행사 검색</a> <a>고객센터</a> <a>회원가입/로그인</a> 
 	</div>
 
 	<div id="m_body">

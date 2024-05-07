@@ -38,6 +38,7 @@ $(document).ready(function() {
 				tbody += "</tr>";
 			});
 			$("#tbody").append(tbody);
+			
 		},
 		error : function() {
 			alert("읽기 실패");

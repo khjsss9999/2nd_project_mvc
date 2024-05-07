@@ -24,17 +24,17 @@ public class AjaxController {
 	    HttpURLConnection conn = null;
 		try {
 		StringBuilder urlBuilder = new StringBuilder("http://kopis.or.kr/openApi/restful/pblprfr"); /*URL*/
-		urlBuilder.append("?" + URLEncoder.encode("service","UTF-8") + "=ee2581e9309c4bc889965812dcef6c4c"); /*Service Key*/        
-		urlBuilder.append("&" + URLEncoder.encode("stdate","UTF-8") + "=" + URLEncoder.encode("20240501", "UTF-8")); /*페이지 번호*/
-        urlBuilder.append("&" + URLEncoder.encode("eddate","UTF-8") + "=" + URLEncoder.encode("20240531", "UTF-8")); /*한 페이지 결과 수*/
-        urlBuilder.append("&" + URLEncoder.encode("cpage","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); 
-        urlBuilder.append("&" + URLEncoder.encode("rows","UTF-8") + "=" + URLEncoder.encode("50", "UTF-8")); 
-        urlBuilder.append("&" + URLEncoder.encode("newsql","UTF-8") + "=" + URLEncoder.encode("Y", "UTF-8")); 
+		urlBuilder.append("?" + URLEncoder.encode("service","utf-8") + "=ee2581e9309c4bc889965812dcef6c4c"); /*Service Key*/        
+		urlBuilder.append("&" + URLEncoder.encode("stdate","utf-8") + "=" + URLEncoder.encode("20240501", "UTF-8")); /*페이지 번호*/
+        urlBuilder.append("&" + URLEncoder.encode("eddate","utf-8") + "=" + URLEncoder.encode("20240531", "UTF-8")); /*한 페이지 결과 수*/
+        urlBuilder.append("&" + URLEncoder.encode("cpage","utf-8") + "=" + URLEncoder.encode("1", "UTF-8")); 
+        urlBuilder.append("&" + URLEncoder.encode("rows","utf-8") + "=" + URLEncoder.encode("50", "UTF-8")); 
+        urlBuilder.append("&" + URLEncoder.encode("newsql","utf-8") + "=" + URLEncoder.encode("Y", "UTF-8")); 
         
         URL url = new URL(urlBuilder.toString());
         conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
-//        conn.setRequestProperty("Content-type", "text/xml");
+        conn.setRequestProperty("Content-type", "text/xml");
         
         
         if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
@@ -81,7 +81,7 @@ public class AjaxController {
         URL url = new URL(urlBuilder.toString());
         conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
-//        conn.setRequestProperty("Content-type", "text/xml");
+       // conn.setRequestProperty("Content-type", "text/xml");
         
         
         if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
@@ -111,6 +111,8 @@ public class AjaxController {
 		}
         return null;
 	}
+	
+	
 }
 	
 
