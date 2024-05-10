@@ -10,9 +10,12 @@
 	<typeAliases>
 		<!-- <typeAlias type="com.ict.guestbook.dao.GuestBookVO" alias="gvo"/>
 		<typeAlias type="com.ict.guestbook2.dao.GuestBook2VO" alias="g2vo"/> -->
+		<typeAlias type="com.ict.khj.dao.CCenterVO" alias="ccvo" />
+		<typeAlias type="com.ict.khj.common.Paging" alias="paging" />
 	</typeAliases>
 	<mappers>
 		<!-- <mapper resource="mappers/guestbook-mapper.xml" />
 		<mapper resource="mappers/guestbook2-mapper.xml" /> -->
+		<mapper resource="mappers/c_center-mapper.xml" />
 	</mappers>
 </configuration>

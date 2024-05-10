@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#frame{
+	width: 1050px;
+	margin: 0px auto;
+}
+
+#header{
+	margin-top: 20px;
+	width: 1000px;
+	height: 80px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#header > a{
+	width: 150px;
+	height: 70px;
+}
+
+#m_body{
+	
+	width: 1000px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#m_body ul{
+	text-decoration: none; 
+	width: 300px;
+	height: 250px;
+	border: 1px solid black;
+	margin-bottom: 50px;
+}
+
+#m_body ul li{
+	margin-bottom: 10px;
+}
+
+ul img{
+	width: 120px;
+	height: 150px;
+}
