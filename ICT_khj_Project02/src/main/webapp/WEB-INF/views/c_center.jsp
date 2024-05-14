@@ -38,8 +38,9 @@
 									<div class="m_type">타입1</div>
 									<div class="m_subject">${k.faq_subject}</div>
 								</div>
+								<div class="m_content">내용 : ${k.faq_content}</div>
 								<div class="m_reply">
-									<p>${k.faq_reply}</p>
+									<p>답글 : ${k.faq_reply}</p>
 								</div>
 							</div>
 						</c:forEach>
@@ -77,7 +78,7 @@
 						</c:when>
 						<c:otherwise>
 							<button type="button" class="page_num"
-								onclick="location.href='c_center_go.do?cPage=${paging.beginBlock + paging.pagePerBlock }'">
+								onclick="location.href='c_center_go.do?cPage=${paging.beginBlock + paging.pagePerBlock }'">&gt;
 							</button>
 						</c:otherwise>
 					</c:choose>
@@ -85,5 +86,14 @@
 			</article>
 		</section>
 	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".m_subject").click(function() {
+					$(this).parent().next().toggle();
+					$(this).parent().next().next().toggle();
+					
+			});		
+	});
+	</script>
 </body>
 </html>

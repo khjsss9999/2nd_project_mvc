@@ -10,7 +10,7 @@ public class Paging {
 	// 한페이지당 8개
 	private int numPerPage = 8;
 	// 한블록당 5페이지
-	private int pagePerBlock = 5;
+	private int pagePerBlock = 3;
 	// DB의 게시물의 수
 		private int totalRecord = 0;
 		// 게시물의 수를 이용하여 전체 페이지 수를 구한다

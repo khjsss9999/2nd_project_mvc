@@ -39,7 +39,7 @@ body{
 	align-items: center;
 }
 
-#s_menu>a {
+#s_menu > a {
 	font-size: 40px;
 	width: 25%;
 	background-color: transparent;
@@ -47,7 +47,7 @@ body{
 	text-decoration: none
 }
 
-#s_menu>a:hover {
+#s_menu > a:hover {
 	background-color: orange;
 }
 
@@ -68,7 +68,7 @@ body{
 	margin-bottom: 30px;
 }
 
-#sel_main>button {
+#sel_main > button {
 	width: 12%;
 	height: 40px;
 	margin: 0 20px 0;
@@ -76,7 +76,7 @@ body{
 	border: none;
 }
 
-#sel_main>button:hover {
+#sel_main > button:hover {
 	background-color: orange;
 }
 
@@ -129,9 +129,24 @@ body{
 	background-color: orange;
 }
 
+.m_content{
+	display: none;
+	white-space: normal;
+	word-break: break-all;
+	margin: 10px auto 20px auto;
+	width: 700px;
+	text-align: center;
+	font-size: 20px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
 
 .m_reply {
 	display: none;
+	white-space: normal;
+	word-break: break-all;
+	margin: 10px auto 20px auto;
+	width: 700px;
 	text-align: center;
 	font-size: 20px;
 	padding: 5px;
@@ -144,18 +159,28 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-#sel_faq_page>.entity {
+
+.disable{
 	width: 40px;
 	height: 40px;
 }
 
-#sel_faq_page>.page_num {
+#sel_faq_page > .entity {
+	width: 40px;
+	height: 40px;
+}
+
+#sel_faq_page > .page_num {
 	width: 40px;
 	height: 40px;
 	background-color: #f5f5f5;
 	text-align: center;
 }
 
-#sel_faq_page>.page_num:hover {
+#sel_faq_page > .page_num:hover {
+	background-color: orange;
+}
+
+.entity:hover{
 	background-color: orange;
 }
