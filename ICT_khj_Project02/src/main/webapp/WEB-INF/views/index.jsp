@@ -19,14 +19,12 @@
 	function event_db_refresh() {
 		location.href = "event_db_refresh.do"
 	}
-	
+	function c_center_go() {
+		location.href= "c_center_go.do";
+	}
 
 </script>
-<script type="text/javascript">
-function c_center_go() {
-	location.href= "c_center_go.do";
-}
-</script>
+
 </head>
 <body>
 	<div id="frame">
