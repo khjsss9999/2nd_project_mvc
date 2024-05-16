@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="event">
+	<insert id="insert" parameterType="evo">
+		insert into event_t(mt20id, prfnm, prfpdfrom, prfpdto, 
+		fcltynm, poster, area, genrenm, prfstate, openrun)
+		values(#{mt20id},#{prfnm},#{prfpdfrom},#{prfpdto},#{fcltynm},#{poster},#{area},#{genrenm},#{prfstate},#{openrun})
+	</insert> 
+	<!-- 페이징 -->
+	<select id="count" resultType="int">
+		select count(*) from event_t
+	</select>
+	<select id="list" parameterType="Map" resultType="evo">
+	 	select * from event_t order by event_idx desc limit #{limit} offset #{offset}
+	</select>
+</mapper>  

@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/reset.css">
 <script type="text/javascript">
-	function event_ajax() {
-		location.href = "event_ajax.do";
+	function event_list() {
+		location.href = "event_list.do";
 	}
 	
 	function event_db_refresh() {
@@ -29,7 +29,7 @@
 <body>
 	<div id="frame">
 	<div id="header">
-		<a>Home</a> <a onclick="event_ajax()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a>회원가입/로그인</a> 
+		<a>Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a>회원가입/로그인</a> 
 	</div>
 
 	<div id="m_body">
