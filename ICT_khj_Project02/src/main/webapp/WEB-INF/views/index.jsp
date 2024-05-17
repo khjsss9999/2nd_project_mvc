@@ -29,7 +29,7 @@
 <body>
 	<div id="frame">
 	<div id="header">
-		<a>Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a>회원가입/로그인</a> 
+		<a>Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a href="login_join.do">회원가입/로그인</a> 
 	</div>
 
 	<div id="m_body">

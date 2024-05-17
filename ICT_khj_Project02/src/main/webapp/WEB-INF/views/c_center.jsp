@@ -11,9 +11,16 @@
 <link rel="stylesheet" href="resources/css/c_center.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+<script type="text/javascript">
+	function index_go() {
+		location.href = "/";
+	}
+</script>
 </head>
 <body>
+	<div id="header">
+		<a onclick="index_go()">Home</a>  <a>행사 검색</a> <a>행사 갱신(db저장)</a> <a>행사 검색</a>  <a>회원가입/로그인</a> 
+	</div>
 	<div id="t_menu">
 		<a>자주하는 질문</a>
 	</div>
@@ -21,7 +28,7 @@
 		<section id="ccenter">
 			<article id="sel">
 				<div id="s_menu">
-					<a href="qna">QnA</a> <a href="faq">FaQ</a> <a href="review">Review</a>
+					<a href="qna.do">QnA</a> <a>FaQ</a> <a href="review.do">Review</a>
 					<a href="faq_write.do">faq글 채워넣기</a>
 				</div>
 			</article>

@@ -28,6 +28,12 @@ import com.ict.khj.dao.EventVO;
 @RestController
 public class AjaxController {
 	
+//	@RequestMapping(value = "id_chk", produces = "text/plain; charset=utf-8")
+//	@ResponseBody
+//	public String IdChk(String user_id) {
+//		
+//	}
+	
 //	@RequestMapping(value = "event_ajax_ok.do", produces="text/xml; charset=utf-8")
 //	@ResponseBody
 //	public String eventData() {

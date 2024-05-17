@@ -8,7 +8,7 @@ public class Paging {
 	private int nowBlock = 1;
 	
 	// 한페이지당 8개
-	private int numPerPage = 8;
+	private int numPerPage = 9;
 	// 한블록당 5페이지
 	private int pagePerBlock = 3;
 	// DB의 게시물의 수

@@ -15,12 +15,19 @@
 	function event_ajax() {
 		location.href = "event_ajax.do";
 	}
+	function c_center_go() {
+		location.href = "c_center_go.do";
+	}
+	function index_go() {
+		location.href = "/";
+	}
+	
 </script>
 </head>
 <body>
 	<div id="frame">
 	<div id="header">
-		<a>Home</a>  <a>행사 검색</a> <a>고객센터</a> <a>회원가입/로그인</a> 
+		<a onclick="index_go()">Home</a>  <a>행사 검색</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a>회원가입/로그인</a> 
 	</div>
 
 	<div id="m_body">
@@ -33,14 +40,14 @@
 				<ul> <img alt="${k.poster}" src="resources/images/event_island.png">
 				<li>행사이름: ${k.prfnm}</li>
 				<li>행사주소: ${k.area}</li>
-				<li>행사기간: ${k.prfpdfrom}~${k.prfpdto}</li>
+				<li>행사기간: ${k.prfpdfrom.substring(0,10)}~${k.prfpdto.substring(0,10)}</li>
 				</ul>
 			</c:forEach>
 		</c:otherwise>
 	</c:choose>
 	</div>
-	<div class="faq_page_body">
-				<div id="sel_faq_page">
+	<div class="all_event_body">
+				<div id="sel_event_page">
 					<c:choose>
 						<c:when test="${paging.beginBlock <= paging.pagePerBlock }">
 							<button type="button" class="disable">&lt;</button>

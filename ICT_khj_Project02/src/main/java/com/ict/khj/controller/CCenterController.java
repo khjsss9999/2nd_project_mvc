@@ -104,4 +104,9 @@ public class CCenterController {
 		
 		return mv;
 	}
+	
+//	@GetMapping("qna.do")
+//	public ModelAndView getQnaList() {
+//		ModelAndView mv = new ModelAndView("qna");
+//	}
 }

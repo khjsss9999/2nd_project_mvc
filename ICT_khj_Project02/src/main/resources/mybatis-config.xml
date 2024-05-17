@@ -13,6 +13,8 @@
 		<typeAlias type="com.ict.khj.dao.CCenterVO" alias="ccvo" />
 		<typeAlias type="com.ict.khj.common.Paging" alias="paging" />
 		<typeAlias type="com.ict.khj.dao.EventVO" alias="evo" />
+		<typeAlias type="com.ict.khj.dao.UserVO" alias="uvo" />
+		<typeAlias type="com.ict.khj.common.SessionUserVO" alias="suvo" />
 	</typeAliases>
 	<mappers>
 		<!-- <mapper resource="mappers/guestbook-mapper.xml" />
