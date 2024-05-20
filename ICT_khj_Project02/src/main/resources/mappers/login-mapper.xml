@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="login">
+	<select id="idchk" parameterType="String" resultType="int">
+		select count(*) from user_t where user_id = #{user_id}
+	</select>
+	<insert id="join" parameterType="uvo">
+		insert into user_t(user_name, user_id, user_pwd, user_f_email, user_b_email, 
+		user_phone, user_type, user_regdate, user_zip_code, user_main_addr, user_detail_addr, 
+		user_ex_addr, user_register, user_addr_type)
+		values(#{user_name}, #{user_id}, #{user_pwd}, #{user_f_email}, 
+		#{user_b_email}, #{user_phone}, #{user_type}, sysdate(), 
+		#{user_zip_code}, #{user_main_addr}, #{user_detail_addr}, #{user_ex_addr}, #{user_register}, #{user_addr_type})
+	</insert>
+	<!-- user_idx, user_type, user_name, user_f_email, user_b_email, 
+	user_id, user_pwd, user_phone, user_zip_code, user_main_addr, 
+	user_detail_addr, user_ex_addr, user_addr_type, user_register, 
+	user_regdate, p_e_idx, w_e_idx; -->
+</mapper>  

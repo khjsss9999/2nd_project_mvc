@@ -3,7 +3,7 @@ package com.ict.khj.dao;
 public class UserVO {
 	
 	
-	private String user_idx, user_type, user_name, user_email, user_id,
+	private String user_idx, user_type, user_name, user_f_email, user_b_email, user_id,
 	user_pwd, user_phone, user_zip_code, user_main_addr, user_detail_addr,
 	user_ex_addr, user_addr_type, user_register, user_regdate, p_e_idx, w_e_idx;
 
@@ -31,12 +31,20 @@ public class UserVO {
 		this.user_name = user_name;
 	}
 
-	public String getUser_email() {
-		return user_email;
+	public String getUser_f_email() {
+		return user_f_email;
 	}
 
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setUser_f_email(String user_f_email) {
+		this.user_f_email = user_f_email;
+	}
+
+	public String getUser_b_email() {
+		return user_b_email;
+	}
+
+	public void setUser_b_email(String user_b_email) {
+		this.user_b_email = user_b_email;
 	}
 
 	public String getUser_id() {

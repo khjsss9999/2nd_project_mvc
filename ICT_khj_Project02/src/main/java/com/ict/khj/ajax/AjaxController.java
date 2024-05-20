@@ -13,6 +13,7 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,15 +25,19 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import com.ict.khj.dao.EventVO;
+import com.ict.khj.service.LogInService;
 
 @RestController
 public class AjaxController {
+	@Autowired
+	private LogInService logInService;
 	
-//	@RequestMapping(value = "id_chk", produces = "text/plain; charset=utf-8")
-//	@ResponseBody
-//	public String IdChk(String user_id) {
-//		
-//	}
+	@RequestMapping(value = "id_chk", produces = "text/plain; charset=utf-8")
+	@ResponseBody
+	public String IdChk(String user_id) {
+		String result = logInService.idChk(user_id);
+		return result;
+	}
 	
 //	@RequestMapping(value = "event_ajax_ok.do", produces="text/xml; charset=utf-8")
 //	@ResponseBody

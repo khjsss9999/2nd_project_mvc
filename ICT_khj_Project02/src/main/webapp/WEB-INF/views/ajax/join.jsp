@@ -20,11 +20,15 @@ function sample6_execDaumPostcode() {
         oncomplete: function(data) {
             var addr = '';
             var extraAddr = ''; 
-
+			var addr_type1 = '';
             if (data.userSelectedType === 'R') { 
                 addr = data.roadAddress;
+                addr_type1 = '1';
+                document.getElementById('set_addr_type').value = addr_type1;
             } else { 
                 addr = data.jibunAddress;
+                addr_type1 = '2';
+                document.getElementById('set_addr_type').value = addr_type1;
             }
 
             if(data.userSelectedType === 'R'){
@@ -153,27 +157,22 @@ function sample6_execDaumPostcode() {
 					<tr id="addr">
 						<td class="menu">주소</td>
 						<td class="userin" id="addr-in">
-							<input class="addr-box" type="text" id="sample6_postcode" name="zip_code" placeholder="우편번호"> 
+							<input class="addr-box" type="text" id="sample6_postcode" name="user_zip_code" placeholder="우편번호"> 
 							<input class="addr-box" class="but3" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-							<input class="addr-box" type="text" id="sample6_address" name="main_addr" placeholder="주소"><br>
-							<input class="addr-box" type="text" id="sample6_detailAddress" name="detail_addr" placeholder="상세주소">
-							<input class="addr-box" type="text" id="sample6_extraAddress" name="ex_addr" placeholder="참고항목">
+							<input class="addr-box" type="text" id="sample6_address" name="user_main_addr" placeholder="주소"><br>
+							<input class="addr-box" type="text" id="sample6_detailAddress" name="user_detail_addr" placeholder="상세주소">
+							<input class="addr-box" type="text" id="sample6_extraAddress" name="user_ex_addr" placeholder="참고항목">
+							<input class="addr-box" type="text" name="user_addr_type" id="set_addr_type"  readonly>
 						</td>
 					</tr>
-					<tr>
-						<td class="menu">회원자격</td>
-						<td>
-							<a class="chtext" ><input type="radio" name="user_type" value="0" >seller</a>
-							<a class="chtext" ><input type="radio" name="user_type" value="1" >customer</a>
-						</td>
-					</tr>
+					
 				</table>
 
 			</div>
 
 			<div class="create">
 				<input class="but4" type="submit" id="join_btn" value="회원가입">
-				<input class="but5" type="button" value="가입취소" onclick="location.href='home'"> 
+				<input class="but5" type="button" value="가입취소" onclick="location.href='/'"> 
 
 			</div>
 		</div>

@@ -21,5 +21,6 @@
 		<mapper resource="mappers/guestbook2-mapper.xml" /> -->
 		<mapper resource="mappers/c_center-mapper.xml" />
 		<mapper resource="mappers/event-mapper.xml" />
+		<mapper resource="mappers/login-mapper.xml" />
 	</mappers>
 </configuration>
