@@ -22,14 +22,30 @@
 	function c_center_go() {
 		location.href= "c_center_go.do";
 	}
-
+	
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		let join_ok = "${suvo.join}";
+		if(join_ok == "1"){
+			alert("회원가입을 축하축하");
+		}
+	});
 </script>
 
 </head>
 <body>
 	<div id="frame">
 	<div id="header">
-		<a>Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> <a href="login_join.do">회원가입/로그인</a> 
+		<a >Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> 
+		<c:choose>
+			<c:when test="${suvo.login == 'true'}">
+				<a>마이페이지</a>
+			</c:when>
+			<c:otherwise>
+				<a href="login_join.do">회원가입/로그인</a> 
+			</c:otherwise>
+		</c:choose>
 	</div>
 
 	<div id="m_body">

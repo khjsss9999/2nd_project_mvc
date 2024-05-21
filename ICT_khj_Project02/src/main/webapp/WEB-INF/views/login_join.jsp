@@ -13,6 +13,9 @@
 	function join_go() {
 		location.href = "join.do";
 	}
+	function normal_login_go() {
+		location.href = "normal_login.do";
+	}
 </script>
 </head>
 <body>
@@ -23,7 +26,7 @@
 		</div>
 		<div id="but">
 			<div class="aaa" onclick="join_go()">일반 회원가입</div>
-			<div class="aaa">일반 로그인</div>
+			<div class="aaa" onclick="normal_login_go()">일반 로그인</div>
 			<div class="ddd" id="naver_login">
 				<img id="nl_img" src="resources/images/btnG_logIn.png">
 			</div>
@@ -31,6 +34,8 @@
 				<img id="kl_img" src="resources/images/kakao_login_large_narrow.png">
 			</div>
 		</div>
+		
 	</div>
+	
 </body>
 </html>

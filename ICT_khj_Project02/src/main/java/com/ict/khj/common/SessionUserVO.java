@@ -2,7 +2,7 @@ package com.ict.khj.common;
 
 public class SessionUserVO {
 	
-	private String user_idx, user_type, login, user_name;
+	private String user_idx, user_type, login, user_name, join;
 
 	public String getUser_idx() {
 		return user_idx;
@@ -35,6 +35,15 @@ public class SessionUserVO {
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
+
+	public String getJoin() {
+		return join;
+	}
+
+	public void setJoin(String join) {
+		this.join = join;
+	}
+	
 	
 	
 }

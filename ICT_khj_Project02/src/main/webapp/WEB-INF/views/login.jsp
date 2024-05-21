@@ -16,19 +16,22 @@
 			<a>회원가입/로그인</a>
 		</div>
 
-		<form action="" method="post">
+		<form action="normal_login_ok" method="post">
 			<div id="pack">
 				<div class="ip">
-					아이디 : <input type="text">
+					아이디 : <input type="text" name="user_id">
 				</div>
 				<div class="ip">
-					비밀번호 : <input type="password">
+					비밀번호 : <input type="password" name="user_pwd">
 				</div>
 				<div class="ip">
 					<input type="submit" value="로그인">
 				</div>
 			</div>
 		</form>
+		<div class="ip">
+				<input type="button" value="아이디 | 비밀번호 찾기" onclick="find()">
+		</div>
 	</div>
 </body>
 </html>
