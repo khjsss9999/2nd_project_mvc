@@ -28,4 +28,14 @@ public class LogInDAO {
 		
 		return sqlSessionTemplate.insert("login.join", uvo);
 	}
+	
+	public UserVO nomalLogin(String user_id) {
+
+		return sqlSessionTemplate.selectOne("login.loginok", user_id);
+	}
+	
+	public FindUserVO normalFindPW(String user_id) {
+
+		return sqlSessionTemplate.selectOne("login.n_findpwd", user_id);
+	}
 }

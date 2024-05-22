@@ -15,6 +15,14 @@
 		#{user_b_email}, #{user_phone}, #{user_type}, sysdate(), 
 		#{user_zip_code}, #{user_main_addr}, #{user_detail_addr}, #{user_ex_addr}, #{user_register}, #{user_addr_type})
 	</insert>
+	<select id="loginok" parameterType="String" resultType="uvo">
+		select * from user_t where user_id = #{user_id}
+	</select>
+	<select id="n_findpwd" parameterType="String" resultType="fuvo" >
+		select user_name, user_id, user_pwd, user_f_email, user_b_email, 
+		user_phone, user_type from user_t where user_id = #{user_id}
+	</select>
+	
 	<!-- user_idx, user_type, user_name, user_f_email, user_b_email, 
 	user_id, user_pwd, user_phone, user_zip_code, user_main_addr, 
 	user_detail_addr, user_ex_addr, user_addr_type, user_register, 

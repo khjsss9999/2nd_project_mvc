@@ -59,16 +59,29 @@ public class LogInController {
 		ModelAndView mv = new ModelAndView("login");
 		return mv;
 	}
-// 2024-05-21 여기까지 한거	
-//	@PostMapping("normal_login_ok")
-//	public ModelAndView nomalLogInOK(HttpServletRequest request, UserVO uvo) {
-//		ModelAndView mv = new ModelAndView("redirect:/");
-//		UserVO uvo2 = logInService.nomalLogin(uvo.getUser_id());
-//		if(uvo2 != null && passwordEncoder.matches(uvo.getUser_pwd(), uvo2.getUser_pwd())) {
-//			
-//		}
-//		return null;
-//	}
+	
+	@PostMapping("normal_login_ok")
+	public ModelAndView nomalLogInOK(HttpServletRequest request, UserVO uvo) {
+		ModelAndView mv = new ModelAndView("redirect:/");
+		UserVO uvo2 = logInService.nomalLogin(uvo.getUser_id());
+		if(uvo2 != null && passwordEncoder.matches(uvo.getUser_pwd(), uvo2.getUser_pwd())) {
+			HttpSession session = request.getSession();
+			SessionUserVO suvo = new SessionUserVO();
+			suvo.setUser_idx(uvo2.getUser_idx());
+			suvo.setUser_name(uvo2.getUser_name());
+			suvo.setUser_type(uvo2.getUser_type());
+			suvo.setLogin("1");
+			session.setAttribute("suvo", suvo);
+			return mv;
+		}
+		return null;
+	}
+	
+	@GetMapping("id_pw_find.do")
+	public ModelAndView nomalIPFind() {
+		ModelAndView mv = new ModelAndView("id_pw_find");
+		return mv;
+	}
 }
 
 

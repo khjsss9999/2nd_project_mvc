@@ -8,6 +8,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="resources/css/reset.css">
 <link rel="stylesheet" href="resources/css/login.css">
+<script type="text/javascript">
+	function find() {
+		location.href="id_pw_find.do";
+	}
+</script>
 </head>
 <body>
 	<div id="frame">
