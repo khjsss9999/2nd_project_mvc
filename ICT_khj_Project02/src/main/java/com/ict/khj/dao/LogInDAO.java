@@ -38,4 +38,9 @@ public class LogInDAO {
 
 		return sqlSessionTemplate.selectOne("login.n_findpwd", user_id);
 	}
+	
+	public int npwdUpdate(FindUserVO fuvo) {
+
+		return sqlSessionTemplate.update("login.npwd", fuvo);
+	}
 }

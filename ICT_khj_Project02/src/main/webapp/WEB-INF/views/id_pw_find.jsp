@@ -8,6 +8,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		let chk = "${chk}";
+		if(chk == 'fail'){
+			alert("아이디나 이메일이 없습니다.");
+			return;
+		}
+	});
+</script>
 <link rel="stylesheet" href="resources/css/reset.css">
 <link rel="stylesheet" href="resources/css/id_pw_find.css">
 </head>

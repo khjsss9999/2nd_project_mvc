@@ -34,4 +34,10 @@ public class LogInServiceImpl implements LogInService{
 
 		return logInDAO.normalFindPW(user_id);
 	}
+	
+	@Override
+	public int npwdUpdate(FindUserVO fuvo) {
+
+		return logInDAO.npwdUpdate(fuvo);
+	}
 }

@@ -40,7 +40,7 @@
 		<a >Home</a> <a onclick="event_list()">모든 행사</a> <a onclick="event_db_refresh()">행사 갱신(db저장)</a> <a>행사 검색</a> <a onclick="c_center_go()">고객센터</a> 
 		<c:choose>
 			<c:when test="${suvo.login == '1'}">
-				<a>마이페이지</a>
+				<a href="mypage.do">마이페이지</a>
 			</c:when>
 			<c:otherwise>
 				<a href="login_join.do">회원가입/로그인</a> 

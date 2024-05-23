@@ -1,0 +1,76 @@
+@charset "UTF-8";
+body{
+	background-color: #f5f5f5;
+}
+#first{
+	width: 1300px;
+	background-color: #f5f5f5;
+	margin: 0 auto;
+	
+}
+
+
+
+
+
+
+/* 이동 버튼 */
+.move_btn{
+	display: block;
+	width: 50%;
+	text-align: center;
+	font-size: 18px;
+	margin: 20px auto 0;
+	background-color: transparent;
+	border: none;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
+
+/* info 프로필단 */
+#f_info{
+	width: 80%;
+	margin: 50px auto 100px;
+}
+#info_pro{
+	width: 100%;
+	height: 450px;
+	border: none;	
+	border-bottom: 1px solid black;
+	padding-bottom: 40px;
+	margin-bottom: 40px; 
+}
+#info_pro > p{
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+#info_pro div{
+	width: 80%;
+	height: 45px;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 10px auto 10px;
+}
+#info_pro div p:nth-of-type(1){
+	width: 15%;
+	height: 45px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#info_pro div p:nth-of-type(1) span{
+	font-size: 40px;
+}
+#info_pro div p:nth-of-type(2){
+	width: 85%;
+	height: 45px;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+

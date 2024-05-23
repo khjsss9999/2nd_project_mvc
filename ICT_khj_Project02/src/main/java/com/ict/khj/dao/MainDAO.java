@@ -40,4 +40,9 @@ public class MainDAO {
 			return null;
 	}
 	
+	public UserVO getUserDetail(String user_idx) {
+
+		return sqlSessionTemplate.selectOne("login.detail", user_idx);
+	}
+	
 }

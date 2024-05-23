@@ -8,4 +8,5 @@ public interface LogInService {
 	public int userJoin(UserVO uvo);
 	public UserVO nomalLogin(String user_id);
 	public FindUserVO normalFindPW(String user_id);
+	public int npwdUpdate(FindUserVO fuvo);
 }

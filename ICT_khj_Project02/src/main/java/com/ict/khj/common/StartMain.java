@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -26,6 +27,7 @@ import org.xml.sax.InputSource;
 
 import com.ict.khj.dao.CCenterVO;
 import com.ict.khj.dao.EventVO;
+import com.ict.khj.dao.UserVO;
 import com.ict.khj.service.MainService;
 
 @Controller
@@ -200,5 +202,48 @@ public class StartMain {
 		
 		return mv;
 	}
+	
+	@GetMapping("mypage.do")
+	public ModelAndView getMyPage(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("mypage");
+		HttpSession session = request.getSession();
+		SessionUserVO suvo = (SessionUserVO) session.getAttribute("suvo");
+		try {
+			UserVO uvo = mainService.getUserDetail(suvo.getUser_idx());
+			mv.addObject("uvo", uvo);
+			return mv;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return new ModelAndView("error");
+	}
 		
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

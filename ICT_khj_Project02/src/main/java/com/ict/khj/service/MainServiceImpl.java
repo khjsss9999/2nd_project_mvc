@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ict.khj.dao.EventVO;
 import com.ict.khj.dao.MainDAO;
+import com.ict.khj.dao.UserVO;
 
 @Service
 public class MainServiceImpl implements MainService{
@@ -27,5 +28,11 @@ public class MainServiceImpl implements MainService{
 	@Override
 	public List<EventVO> getEventList(int offset, int limit) {
 		return mainDAO.getEventList(offset, limit);
+	}
+	
+	@Override
+	public UserVO getUserDetail(String user_idx) {
+
+		return mainDAO.getUserDetail(user_idx);
 	}
 }
