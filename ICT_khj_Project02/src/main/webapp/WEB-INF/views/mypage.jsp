@@ -19,10 +19,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script type="text/javascript">
 	function update() {
-		location.href="update"
+		location.href="update.do";
 	}
 	function update_pwd() {
-		location.href="update_pwd"
+		location.href="update_pwd.do";
 	}
 	
 </script>

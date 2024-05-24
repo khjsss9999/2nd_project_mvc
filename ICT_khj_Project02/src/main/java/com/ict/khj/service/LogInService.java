@@ -9,4 +9,6 @@ public interface LogInService {
 	public UserVO nomalLogin(String user_id);
 	public FindUserVO normalFindPW(String user_id);
 	public int npwdUpdate(FindUserVO fuvo);
+	public int expwdUpdate(FindUserVO fuvo);
+	public FindUserVO nomalFindID(String user_name);
 }

@@ -40,4 +40,16 @@ public class LogInServiceImpl implements LogInService{
 
 		return logInDAO.npwdUpdate(fuvo);
 	}
+	
+	@Override
+	public int expwdUpdate(FindUserVO fuvo) {
+
+		return logInDAO.expwdUpdate(fuvo);
+	}
+	
+	@Override
+	public FindUserVO nomalFindID(String user_name) {
+
+		return logInDAO.nomalFindID(user_name);
+	}
 }

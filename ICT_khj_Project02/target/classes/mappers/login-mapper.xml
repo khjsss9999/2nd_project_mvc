@@ -30,6 +30,14 @@
 	<select id="detail" parameterType="String" resultType="uvo">
 		select * from user_t where user_idx = #{user_idx}
 	</select>
+	<update id="expwd" parameterType="fuvo">
+		update user_t
+		set user_pwd=#{user_pwd}, ex_pwd_status = 0
+		where user_idx = #{user_idx}
+	</update>
+	<select id="n_findid" parameterType="String" resultType="fuvo">
+		select * from user_t where user_name = #{user_name}
+	</select>
 	
 	<!-- user_idx, user_type, user_name, user_f_email, user_b_email, 
 	user_id, user_pwd, user_phone, user_zip_code, user_main_addr, 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ict.khj.common.SessionUserVO;
+import com.ict.khj.dao.FindUserVO;
 import com.ict.khj.dao.UserVO;
 import com.ict.khj.service.LogInService;
 
@@ -80,6 +81,22 @@ public class LogInController {
 	@GetMapping("id_pw_find.do")
 	public ModelAndView nomalIPFind() {
 		ModelAndView mv = new ModelAndView("id_pw_find");
+		return mv;
+	}
+	
+	@GetMapping("update_pwd.do")
+	public ModelAndView updatePwd() {
+		return new ModelAndView("pwdupdate");
+	}
+	
+	@PostMapping("update_pwd_ok")
+	public ModelAndView updatePwdOK(HttpSession session,FindUserVO fuvo ) {
+		ModelAndView mv = new ModelAndView("redirect:/");
+		SessionUserVO suvo = (SessionUserVO) session.getAttribute("suvo");
+		fuvo.setUser_idx(suvo.getUser_idx());
+		fuvo.setUser_pwd(passwordEncoder.encode(fuvo.getUser_pwd()));
+		int res = logInService.expwdUpdate(fuvo);
+		session.removeAttribute("suvo");
 		return mv;
 	}
 }

@@ -59,6 +59,24 @@ public class EmailController {
 		mv.addObject(email_pwd, mv);
 		return mv;
 	}
+	
+	@PostMapping("find_user_id")
+	public ModelAndView findUserID(String user_name, String email_id, HttpServletRequest request, FindUserVO fuvo ) {
+		ModelAndView mv = new ModelAndView("id_pw_find");
+		try {
+			FindUserVO fuvo2 = logInService.nomalFindID(user_name);
+			if(fuvo2 != null && (email_id.equals(fuvo2.getUser_f_email() + "@" + fuvo2.getUser_b_email() ))) {
+				String userID = fuvo2.getUser_id();
+				String userName = fuvo2.getUser_name();
+				mailService.sendIDEmail(userID, email_id);
+				return new ModelAndView("idconfirm");
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		mv.addObject("chk", "fail");
+		return mv;
+	}
 
 }
 
