@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<select id="count" resultType="int">
+		select count(*) from board_t
+	</select>
+	<select id="board_list" parameterType="Map" resultType="bovo">
+		select * from board_t order by groups desc, lev asc limit #{limit} offset #{offset}
+	</select>
+	<insert id="board_insert" parameterType="bovo">
+		<selectKey keyProperty="groups" resultType="String" order="BEFORE">
+			SELECT (IFNULL(MAX(board_idx),0)+1) as groups from board_t
+		</selectKey>	
+		insert into board_t(writer, title, content, pwd, hit, groups, step, lev, regdate, f_name)
+		values(#{writer}, #{title}, #{content}, #{pwd}, 0, #{groups}, 0, 0, sysdate(), #{f_name})	
+	</insert>
+</mapper>  

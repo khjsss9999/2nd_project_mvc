@@ -16,6 +16,7 @@
 		<typeAlias type="com.ict.khj.dao.UserVO" alias="uvo" />
 		<typeAlias type="com.ict.khj.common.SessionUserVO" alias="suvo" />
 		<typeAlias type="com.ict.khj.dao.FindUserVO" alias="fuvo" />
+		<typeAlias type="com.ict.khj.dao.BoardVO" alias="bovo" />
 	</typeAliases>
 	<mappers>
 		<!-- <mapper resource="mappers/guestbook-mapper.xml" />
@@ -23,5 +24,6 @@
 		<mapper resource="mappers/c_center-mapper.xml" />
 		<mapper resource="mappers/event-mapper.xml" />
 		<mapper resource="mappers/login-mapper.xml" />
+		<mapper resource="mappers/board-mapper.xml" />
 	</mappers>
 </configuration>

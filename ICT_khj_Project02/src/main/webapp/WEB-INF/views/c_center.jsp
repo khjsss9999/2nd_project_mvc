@@ -28,7 +28,7 @@
 		<section id="ccenter">
 			<article id="sel">
 				<div id="s_menu">
-					<a href="qna.do">QnA</a> <a>FaQ</a> <a href="review.do">Review</a>
+					<a href="qna.do">QnA</a> <a href="board_list.do">Board</a> <a>FaQ</a> <a href="review.do">Review</a>
 					<a href="faq_write.do">faq글 채워넣기</a>
 				</div>
 			</article>
