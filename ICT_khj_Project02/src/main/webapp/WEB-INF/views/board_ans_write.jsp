@@ -20,7 +20,7 @@ th {
 	}
 </style>
 <script type="text/javascript">
-	function board_write_ok(f) {
+	function board_ans_write_ok(f) {
 		for (var i = 0; i < f.elements.length; i++) {
 			if (f.elements[i].value == "") {
 				if (i == 3) continue;
@@ -29,18 +29,16 @@ th {
 				return;//수행 중단
 			}
 		}
-		f.action = "board_write_ok.do";
 		f.submit();
 	}
-	
 	function board_list(f) {
-		f.action = "board_list.do";
+		f.action="board_list.do";
 		f.submit();
 	}
 </script>
 </head>
 <body>
-	<form method="post" enctype="multipart/form-data">
+	<form action="board_ans_write_ok.do" method="post" enctype="multipart/form-data">
 		<table width="700">
 		<tbody>
 			<tr>
@@ -66,9 +64,11 @@ th {
 			</tr>
 			<tr>
 				<td colspan="2">
-				<input type="button" value="입력" onclick="board_write_ok(this.form)" /> 
+				<input type="hidden" name="cPage" value="${cPage}">
+				<input type="hidden" name="board_idx" value="${board_idx}">
+				<input type="button" value="답글입력" onclick="board_ans_write_ok(this.form)" /> 
+				<input type="button" value="목록" onclick="board_list(this.form)" /> 
 				<input type="reset" value="취소" />
-				<input type="button" value="목록" onclick="board_list(this.form)">
 				</td>
 			</tr>
             </tbody>

@@ -45,4 +45,65 @@ public class BoardDAO {
 		}
 		return -1;
 	}
+	
+	public int getBoardHit(String board_idx) {
+		try {
+			return sqlSessionTemplate.update("board.hit_up", board_idx);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return -1;
+	}
+	
+	public BoardVO getBoardDetail(String board_idx) {
+		try {
+			
+			return sqlSessionTemplate.selectOne("board.detail", board_idx);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
+	}
+	
+	public int getLevUpdate(Map<String, Integer> map) {
+		try {
+			
+			return sqlSessionTemplate.update("board.lev_update", map);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return -1;
+	}
+	
+	public int getAnsInsert(BoardVO bovo) {
+		return sqlSessionTemplate.insert("board.ans_insert", bovo);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

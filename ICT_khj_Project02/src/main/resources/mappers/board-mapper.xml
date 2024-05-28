@@ -17,4 +17,17 @@
 		insert into board_t(writer, title, content, pwd, hit, groups, step, lev, regdate, f_name)
 		values(#{writer}, #{title}, #{content}, #{pwd}, 0, #{groups}, 0, 0, sysdate(), #{f_name})	
 	</insert>
+	<update id="hit_up" parameterType="String">
+		update board_t set hit = hit + 1 where board_idx = #{board_idx}
+	</update>
+	<select id="detail" parameterType="String" resultType="bovo">
+		select * from board_t where board_idx = #{board_idx}
+	</select>
+	<update id="lev_update" parameterType="Map">
+		update board_t set lev = lev + 1 where groups = #{groups} and lev >= #{lev}
+	</update>
+	<insert id="ans_insert" parameterType="bovo">
+		insert into board_t(writer, title, content, pwd, hit, groups, step, lev, regdate, f_name)
+		values(#{writer},#{title},#{content},#{pwd},0,#{groups},#{step},#{lev},sysdate(),#{f_name})
+	</insert>
 </mapper>  
